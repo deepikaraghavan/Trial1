@@ -13,6 +13,7 @@ view: dimensionalizingameasure {
   dimension: prim_key {
     type: number
     primary_key: yes
+    #primary_key
     sql: ${TABLE}.`products.id` ;;
     }
 
