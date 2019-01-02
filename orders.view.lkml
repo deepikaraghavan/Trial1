@@ -32,8 +32,23 @@ view: orders {
     sql: ${TABLE}.user_id ;;
   }
 
+  dimension: status_numeric {
+    case: {
+      when:{
+        sql: ${TABLE}.status="complete";;
+        label: "1"
+        }
+     else: "0"
+          }
+    }
+
   measure: count {
     type: count
     drill_fields: [id, users.first_name, users.last_name, users.id, order_items.count]
+  }
+
+  measure: sum_status {
+    type: sum
+    sql: ${status_numeric} ;;
   }
 }

@@ -42,4 +42,14 @@ view: order_items {
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
   }
+
+  measure: last_return_date {
+    type: date
+    sql: MAX(${returned_date}) ;;
+  }
+
+  measure: average_sale_price {
+    type: average
+    sql: ${sale_price} ;;
+  }
 }

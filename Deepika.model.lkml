@@ -12,6 +12,7 @@ persist_with: trial_default_datagroup
 
 explore: events {
   join: users {
+    view_label: "The User Table"
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
     relationship: many_to_one
@@ -27,6 +28,12 @@ explore: inventory_items {
 }
 
 explore: order_items {
+  always_filter: {
+    filters: {
+      field: order_id
+      value: "4"
+    }
+    }
   join: inventory_items {
     type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
@@ -60,7 +67,14 @@ explore: orders {
   }
 }
 
-explore: products {}
+
+explore: products {
+  join: dimensionalizingameasure {
+    type: left_outer
+    sql_on: ${dimensionalizingameasure.prim_key}=${products.id} ;;
+    relationship: many_to_one
+  }
+}
 
 explore: schema_migrations {}
 
