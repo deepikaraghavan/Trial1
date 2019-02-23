@@ -35,7 +35,6 @@ view: events {
   dimension: value {
     type: string
     sql: ${TABLE}.value ;;
-    value_format_name: percent_2
   }
 
   measure: count {
