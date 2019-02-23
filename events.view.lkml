@@ -35,6 +35,7 @@ view: events {
   dimension: value {
     type: string
     sql: ${TABLE}.value ;;
+    value_format_name: decimal_0
   }
 
   measure: count {
