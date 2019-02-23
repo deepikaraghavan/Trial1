@@ -17,11 +17,6 @@ view: dimensionalizingameasure {
     sql: ${TABLE}.`products.id` ;;
     }
 
-  measure: count {
-    type: count
-    drill_fields: [detail*]
-  }
-
 
   dimension: products_count {
     type: number
