@@ -69,9 +69,9 @@ explore: orders {
 
 
 explore: products {
-  join: dimensionalizingameasure {
+  join: dpdpdp {
     type: left_outer
-    sql_on: ${dimensionalizingameasure.prim_key}=${products.id} ;;
+    sql_on: ${dpdpdp.prim_key}=${products.id} ;;
     relationship: many_to_one
   }
 }

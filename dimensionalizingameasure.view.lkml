@@ -1,4 +1,4 @@
-view: dimensionalizingameasure {
+view: dpdpdp {
 
     sql_table_name: (SELECT
         products.id  AS `products.id`,
